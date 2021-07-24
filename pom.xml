@@ -79,6 +79,7 @@
                         <include>**/Test*.java</include>
                         <include>**/*TestSuite.java</include>
                         <include>**/When*.java</include>
+                        <include>**/Cuando*.java</include>
                     </includes>
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
