@@ -8,6 +8,28 @@
     <packaging>jar</packaging>
 
     <name>Sample Serenity BDD project using JUnit</name>
+    <profiles>
+        <profile>
+            <id>paralelo</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <version>2.22.1</version>
+                        <configuration>
+                            <includes>
+                                <include>**/Cuando*.java</include>
+                            </includes>
+                            <systemPropertyVariables>
+                                <serenity.fork.count>4</serenity.fork.count>
+                                <serenity.fork.number>4</serenity.fork.number>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <properties>
         <serenity.version>2.4.34</serenity.version>
